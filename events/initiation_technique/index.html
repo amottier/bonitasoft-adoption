@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="fr">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Initiation technique à Bonita BPM</title>
+
+		<meta name="description" content="Présentation de Bonita BPM permettant de rapidement réaliser un premier processus">
+		<meta name="author" content="Antoine Mottier - Philippe Ozil">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/bonita.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+			
+				<section>
+					<h1>Initiation technique à Bonita BPM</h1>
+					<aside class="notes">
+					Cette présentation vas vous guider dans la découverte de Bonita BPM pour vous permettre de créer votre premier processus. Nous allons alterner les phases de présentation et les phases de mise en pratique en s'appuyant sur la déscription de l'exercise que nous vous avons partagé.
+					</aside>
+				</section>
+				
+				<section>
+					<h2>Objectifs du BPM</h2>
+					<p>Collaborer à la définition et l'exécution des processus de l'entreprise</p>
+					<p>Suivre le bon déroulement des processus</p>
+					<p>Optimiser les processus </p>
+				</section>
+
+				<section>
+					<section>
+						<h2>Les composants de Bonita BPM</h2>
+						<ul>
+							<li>Bonita Studio</li>
+							<li>Bonita Platform
+								<ul>
+									<li>Bonita Engine</li>
+									<li>Bonita Portal</li>
+								</ul>
+							</li>
+						</ul>
+					
+						<aside class="notes">
+						La solution Bonita BPM se compose de trois composants : Bonita Studio, Bonit Engine et Bonita Portal. Les composants Engine et Portal representent le côté serveur de la solution et se regroupent sous le nom "Bonita Platform".
+						</aside>
+					</section>
+
+					<section>
+						<h2>Bonita BPM Studio : edition de diagrammes</h2>
+						<img src="images/screenshot_studio_diagram.png" alt="Bonita BPM Studio : edition de diagrammes">
+						<p></p>
+					</section>
+					
+					<section>
+						<h2>Bonita BPM Studio : edition de formulaires</h2>
+						<img src="images/screenshot_studio_form_editor.png" alt="Bonita BPM Studio : edition de formulaires">
+						<p></p>
+					</section>
+					
+					<section>
+						<h2>Bonita BPM Engine</h2>
+						<p>Le moteur responsable de l'exécution des processus</p>
+						<p>Basé sur un ensemble de technologie du monde Java :</p>
+						<ul>
+							<li>Java SE 7</li>
+							<li>JDBC</li>
+							<li>Java EE 6 : JSP, Servlet, JTA</li>
+						</ul>
+						<p>Packagé avec le Portal dans une application web (WAR ou EAR)</p>
+					</section>
+					
+					<section>
+						<h2>Bonita BPM Portal</h2>
+						<p>L'interface web pour l'utilisateur final et l'administrateur</p>
+						<p>Présente la liste des tâches à réaliser</p>
+						<img src="images/screenshot_portal_inbox.png" alt="Bonita BPM Portal : liste de tâches" height="400px">
+						<p>Permet de déployer et configurer des processus</p>
+					</section>
+				</section>
+
+				<section>
+					<h2>Introduction au BPMN</h2>
+					<p>Une notation standard (OMG) pour la modélisation des processus</p>
+					<p>Les éléments essentiels :</p>
+					<ul>
+						<li>Start event</li>
+						<li>User task (<=> Human task)</li>
+						<li>Service task</li>
+					</ul>
+				</section>
+
+				<section data-state="exercise">
+					<h2>Exercice 1</h2>
+					<p>Première étape de la modélisation d'un processus</p>
+				</section>
+
+				<section>
+					<section>
+						<h2>Gestion des données : scope</h2>
+						<p>3 types de visibilité sont disponible :</p>
+						<ul>
+							<li>Processus</li>
+							<li>Étape</li>
+							<li>Formulaire</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Gestion des données : persitence et types</h2>
+						<p>Les données sont sauvegardées dans la base de données associée au moteur à l'exception des données transientes d'étapes</p>
+						<p>Tout type d'objet Java peut être utilisé</p>
+						<p>Les types autres que les types primitifs et String sont sérialisés pour être persistés</p>
+					</section>
+				</section>
+				
+				<section data-state="exercise">
+					<h2>Exercice 2</h2>
+					<p>Ajout de données et utilisation des formulaires auto-générés</p>
+				</section>
+
+				<section>
+					<h2>Introduction au BPMN 2nde partie</h2>
+					<p>Trois type de portes logiques :</p>
+					<ul>
+						<li>Exclusive</li>
+						<li>Parallèle</li>
+						<li>Inclusive</li>
+					</ul>
+				</section>
+				
+				<section data-state="exercise">
+					<h2>Exercice 3</h2>
+					<p>Porte logique exclusive pour orienté le flux du processus en fonction des données</p>
+				</section>
+
+				<section>
+					<section>
+						<h2>Formulaires</h2>
+						<p>Deux types :</p>
+						<ul>
+							<li>Démarrage de cas</li>
+							<li>Étape</li>
+						</ul>
+						<p>Ensemble de widgets placés sur une grille</p>
+					</section>
+					<section>
+						<h2>Widgets</h2>
+						<p>Les widgets dispose d'un ensemble de paramètres de configuration :<p>
+						<ul>
+							<li>Nom (id) et libellé</li>
+							<li>Aide, info-bulle, example</li>
+							<li>Valeur disponibles, valeur initale</li>
+							<li>Opération de sortie</li>
+							<li>Insertion conditionnelle, obligatoire, lecture seule...</li>
+							<li>Validation des données saisies</li>
+						</ul>
+					</section>
+				</section>
+				
+				<section data-state="exercise">
+					<h2>Exercice 4</h2>
+					<p>Création de formulaires : démarrage de cas et étape</p>
+				</section>
+
+				<section>
+					<h2>Acteurs</h2>
+					<p>Deux grandes options :</p>
+					<ul>
+						<li>Acteur : association entre la définition du processus et l'organisation</li>
+						<li>Filtre d'acteur : logique exécutée au moment où la tâche deviens disponible</li>						
+					</ul>
+				</section>
+				
+				<section data-state="exercise">
+					<h2>Exercice 5</h2>
+					<p>Utilisation de l'acteur par défaut et d'un filtre d'acteur</p>
+				</section>
+
+				<section>
+					<h2>Connecteurs</h2>
+					<p>Connecter une definition de processus vers le SI</p>
+					<p>A l'opposer les API (REST / Java) permettent au SI d'intéragir avec les processus</p>
+					<p>Un catalogue standard de connecteur est disponible. Il est possible de créer ses propres connecteurs</p>
+					<ul>
+						<li>Un connecteur est composé d'une définition (interface Java) et d'une implémentation (class Java)</li>
+						<li>Interface définie les paramètres d'entrée et de sortie</li>
+						<li>Implémentation définie la logique métier</li>
+					</ul>
+				</section>
+				
+				<section data-state="exercise">
+					<h2>Exercice 6</h2>
+					<p>Utiliser un connecteur pour envoyer un email</p>
+				</section>
+
+				<section>
+					<h2>Déploiement</h2>
+					<p>Étapes principales du déploiement d'un processus :</p>
+					<ul>
+						<li>Configuration du processus dans le Studio</li>
+						<li>Génération du fichier .bar</li>
+						<li>Déploiement du .bar en utilisant le Portal</li>
+						<li>Configuration du processus après déploiement</li>
+						<li>Activation du processus</li>
+					</ul>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: false,
+				width: '90%',
+				height: '90%',
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
