@@ -24,6 +24,7 @@ body {
   background: radial-gradient(center, circle cover, #555a5f 0%, #1c1e20 100%);
   background-color: #2b2b2b;
   background-image: url("images/logo_white.png");
+  background-size: 276px 80px;
   background-position: left bottom; /*Positioning*/
   background-repeat: no-repeat;
 }
@@ -92,7 +93,7 @@ body {
  * LINKS
  *********************************************/
 .reveal a:not(.image) {
-  color: #13daec;
+  color: #FF3030;
   text-decoration: none;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
@@ -101,7 +102,7 @@ body {
   transition: color .15s ease; }
 
 .reveal a:not(.image):hover {
-  color: #71e9f4;
+  color: #FF0000;
   text-shadow: none;
   border: none; }
 
@@ -131,6 +132,10 @@ body {
   /***************************
    * Custom Bonitasoft
    * ************************/
+.reveal ul.no-bullet {
+  list-style-type: none;
+}
+
 .reveal section img.only_right_margin {
   margin: 0px 10px 0px 0px;
   border: 0;
