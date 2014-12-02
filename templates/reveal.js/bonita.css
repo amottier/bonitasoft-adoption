@@ -132,12 +132,13 @@ body {
   /***************************
    * Custom Bonitasoft
    * ************************/
-.reveal ul.no-bullet {
+.reveal section ul.no-bullet {
   list-style-type: none;
 }
 
 .reveal section img.only_right_margin {
-  margin: 0px 10px 0px 0px;
+  vertical-align: middle;
+  margin: 0px 20px 0px 0px;
   border: 0;
   background-color: transparent;
 }
