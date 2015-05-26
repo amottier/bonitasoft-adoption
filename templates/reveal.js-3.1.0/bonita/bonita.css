@@ -286,8 +286,8 @@ body {
 /* Links in red */
 .reveal section a:not(.image)			{color: #FF3030;}
 .reveal section a:not(.image):hover	{color: #FF0000;}
-/* Images without borders */
-.reveal section img	{border-width: 0;}
+/* Images without borders and transparent background */
+.reveal section img	{border-width:0; background-color:transparent;}
 
 /* OPTIONAL CLASSES */
 
