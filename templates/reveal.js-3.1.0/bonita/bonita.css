@@ -281,17 +281,19 @@ body {
 	background-position: left bottom;
 	background-repeat: no-repeat;
 }
-/* Paragraphs with left-aligned text*/
+/* Paragraphs with left-aligned text */
 .reveal section p		{text-align:left;}
 /* Links in red */
-.reveal section a:not(.image)			{color: #FF3030;}
-.reveal section a:not(.image):hover	{color: #FF0000;}
+.reveal section a			{color:#FF3030;}
+.reveal section a:hover	{color:#FF0000;}
 /* Images without borders and transparent background */
 .reveal section img	{border-width:0; background-color:transparent;}
 
 /* OPTIONAL CLASSES */
 
-/* List without bullets */
-.reveal section ul.no-bullet	{list-style-type: none;}
-/* Table without borders */
-.reveal section table.no-border, .reveal section table.no-border td	{border-width:0;}
+/* Any element without margins */
+.reveal  .no-margin	{margin:0 !important;}
+/* Any element including tables without borders */
+.reveal  .no-border, table.no-border td	{border-width:0 !important;}
+/* Lists without bullets */
+.reveal section ul.no-bullet	{list-style-type:none;}
